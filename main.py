@@ -8,10 +8,10 @@ Flag=0
 # flag is used to know where the input number should go 
 
 #add bot api from environment variables
-api=os.environ.get('api_key')
+#api=os.environ.get('api_key')
 
 # add api key without environment variables
-#api=YOUR_API_KEY
+api="5427244127:AAGj7pGJSX5jg26yje-FdkWGGrfOqHH0LT8"
 
 # create a log file
 logging.basicConfig(filename='bot.log',format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -29,7 +29,7 @@ def Start(update: Update, context):
 		
 # /truecaller calls this funtion
 def Truecaller(update: Update,context) -> None:
-	update.message.reply_text('Enter a number without +91 or share contact')
+	update.message.reply_text('Enter a number without +88 or share contact')
 	global Flag
 	Flag = 1
 
@@ -132,7 +132,7 @@ def unprotect(update: Update, context: CallbackContext) -> None:
 		
 def SourceCode(update: Update,context) -> None:
 	print('Source code')
-	update.message.reply_text('https://github.com/rudranag/Truecaller-telegram_bot')
+	update.message.reply_text('https://github.com/tas33n/Liya_circle')
 	
 # funtion to log errors         
 def error(update, context):
@@ -144,7 +144,7 @@ def unknown_command(update, context):
 	# This function is used to tell the user it didnt recognize the command
 
 def InvalidNumber(update, context):
-	update.message.reply_text("Please enter a 10 digit number")
+	update.message.reply_text("Please enter a 11 digit number")
 	# This function will detect phone number input with is not a 10 digit number 
 	
 dp.add_handler(CommandHandler('start', Start))
