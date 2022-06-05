@@ -11,7 +11,7 @@ Flag=0
 #api=os.environ.get('api_key')
 
 # add api key without environment variables
-api="5427244127:AAGj7pGJSX5jg26yje-FdkWGGrfOqHH0LT8"
+api="5314318355:AAFDBdyZNOLXhQvx2Boif-2nqQ7UAeDUHpg"
 
 # create a log file
 logging.basicConfig(filename='bot.log',format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -131,8 +131,12 @@ def unprotect(update: Update, context: CallbackContext) -> None:
         update.message.reply_text('Usage : /unprotect 9123456789')
 		
 def SourceCode(update: Update,context) -> None:
-	print('Source code')
-	update.message.reply_text('https://github.com/tas33n/Liya_circle')
+	#print('This bot is powered by misfitsDev')
+	update.message.reply_text("This bot is powered by 'Misfits Dev' 👉 @misfitsdev . If u like my work join my channel and chill it's free ✌️😗 ")
+	
+def circle(update: Update,context) -> None:
+	#print('pls ask my sister for circle things 😘 ')
+	update.message.reply_text("pls ask my sister 'Liya 4 Circle' for circle related things 😘  👉@Liya_4cbot")
 	
 # funtion to log errors         
 def error(update, context):
@@ -144,17 +148,18 @@ def unknown_command(update, context):
 	# This function is used to tell the user it didnt recognize the command
 
 def InvalidNumber(update, context):
-	update.message.reply_text("Please enter a 11 digit number")
+	update.message.reply_text("Please enter a 10 digit number")
 	# This function will detect phone number input with is not a 10 digit number 
 	
 dp.add_handler(CommandHandler('start', Start))
-dp.add_handler(CommandHandler('truecaller', Truecaller,run_async=True))
-dp.add_handler(CommandHandler('sourcecode', SourceCode))
+dp.add_handler(CommandHandler('info', Truecaller,run_async=True))
+dp.add_handler(CommandHandler('admin', SourceCode))
+dp.add_handler(CommandHandler('circle', circle))
 dp.add_handler(CommandHandler("protect", protect))
 dp.add_handler(CommandHandler("unprotect", unprotect))
-dp.add_handler(MessageHandler(Filters.regex(r'^\d{10}$'),Number,run_async=True))
+dp.add_handler(MessageHandler(Filters.regex(r'^\d{11}$'),Number,run_async=True))
 dp.add_handler(MessageHandler(Filters.regex(r'(\d{5}\s{1}\d{5})|(\d{3}-\d{3}-\d{4})|(\+\d{12})'),InvalidNumber))
-dp.add_handler(CommandHandler('smsbomber',Smsbomber,run_async=True))
+dp.add_handler(CommandHandler('bomber',Smsbomber,run_async=True))
 dp.add_handler(MessageHandler(Filters.contact, Contact,run_async=True))
 dp.add_handler(MessageHandler(Filters.command, unknown_command))
 dp.add_error_handler(error)
